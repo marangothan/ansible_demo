@@ -34,7 +34,7 @@
 - hosts: 172.31.43.56
   become: true
   tasks:
-  - name: check url response of managed nodel1
+  - name: check url response
     uri:
      url: http://172.31.43.56
      status: 201
