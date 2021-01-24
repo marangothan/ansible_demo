@@ -1,4 +1,6 @@
- become: true
+- name: Configure apache
+  hosts: 172.31.43.56
+  become: true
   tasks:
    - name: Install Apache
      apt:
@@ -34,8 +36,7 @@
 - hosts: 172.31.43.56
   become: true
   tasks:
-  - name: check url response
+  - name: check url response of managed nodel1
     uri:
      url: http://172.31.43.56
-     status: 201
-                                                                                                   
+     status: 200
