@@ -1,5 +1,5 @@
 - name: Configure apache
-  hosts: 172.31.43.56
+  hosts: webserver
   become: true
   tasks:
    - name: Install Apache
@@ -7,7 +7,7 @@
       name: apache2
       state: present
 
-- hosts: 172.31.46.51
+- hosts: webserver
   become: true
   tasks:
    - name: install PHP module for Apache
@@ -15,7 +15,7 @@
       name: libapache2-mod-php5.6
       state: present
 
-- hosts: 172.31.43.56
+- hosts: webserver
   become: true
   tasks:
   - name: start apache
@@ -24,7 +24,7 @@
      state: restarted
      enabled: yes
 
-- hosts: 172.31.43.56
+- hosts: webserver
   become: true
   tasks:
    - name: copy web application to the  directory
@@ -33,7 +33,7 @@
       dest: /var/www/html/hello.php
       mode: 0664
 
-- hosts: 172.31.43.56
+- hosts: webserver
   become: true
   tasks:
   - name: check url response of managed nodel1
