@@ -32,11 +32,3 @@
       src: /home/ubuntu/hello.php
       dest: /var/www/html/hello.php
       mode: 0664
-
-- hosts: webserver
-  become: true
-  tasks:
-  - name: check url response of managed nodel1
-    uri:
-     url: http://172.31.43.56
-     status: 200
